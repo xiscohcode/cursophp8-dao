@@ -12,21 +12,21 @@ class Sql extends PDO { // extends foi usado para termos acesso a todos os recur
 
     }
     //busca vários dados no bd
-    private function setParams($statment, $parameters = array()) 
+    private function setParams($statement, $parameters = array()) 
     { // Método que recebe uma query preparada e um array de dados para fazer o bind
         foreach ($parameters as $key => $value)
         {
 
-            $this->setParam($statment, $key, $value);
+            $this->setParam($statement, $key, $value);
 
         }
 
     }
     //busca somente um dado no bd.
-    private function setParam($statment, $key, $value) 
+    private function setParam($statement, $key, $value) 
     {
 
-        $statment->bindParam($key, $value);
+        $statement->bindParam($key, $value);
 
     }
     //método que aplica os comandos no bd.
